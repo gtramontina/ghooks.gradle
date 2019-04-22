@@ -1,0 +1,9 @@
+language: java
+jdk:
+  - openjdk11
+script:
+  - ./gradlew clean build
+after_success:
+  - nvm install
+  - yarn install
+  - yarn semantic-release
