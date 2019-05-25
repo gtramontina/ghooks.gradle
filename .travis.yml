@@ -1,9 +1,22 @@
+os:
+  - linux
+  - osx
 language: java
 jdk:
   - openjdk11
 script:
   - ./gradlew clean build
-after_success:
-  - nvm install
-  - yarn install
-  - yarn semantic-release
+
+jobs:
+
+  include:
+    - stage: release
+      deploy:
+        provider: script
+        skip_cleanup: true
+        script:
+          - nvm install lts/*
+          - yarn install
+          - yarn semantic-release
+      on:
+        all_branches: true

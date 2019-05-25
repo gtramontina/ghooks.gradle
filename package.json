@@ -1,4 +1,5 @@
 {
+  "repository": "https://github.com/gtramontina/ghooks.gradle.git",
   "devDependencies": {
     "@semantic-release/changelog": "3.0.2",
     "@semantic-release/commit-analyzer": "6.1.0",
