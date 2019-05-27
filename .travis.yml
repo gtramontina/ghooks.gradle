@@ -8,15 +8,16 @@ script:
   - ./gradlew clean build
 
 jobs:
-
   include:
     - stage: release
+      script:
+        - ./gradlew assemble
+      before_deploy:
+        - nvm install lts/*
+        - yarn install
       deploy:
         provider: script
         skip_cleanup: true
-        script:
-          - nvm install lts/*
-          - yarn install
-          - yarn semantic-release
+        script: yarn semantic-release
       on:
-        all_branches: true
+        branch: master
