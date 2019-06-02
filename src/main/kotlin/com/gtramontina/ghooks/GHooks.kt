@@ -2,7 +2,7 @@ package com.gtramontina.ghooks
 
 import org.gradle.api.Plugin
 import org.gradle.api.Project
-import org.gradle.internal.impldep.org.apache.commons.io.FileUtils.forceDelete
+import org.apache.commons.io.FileUtils.forceDelete
 import java.nio.file.Files.createSymbolicLink
 import java.nio.file.Files.exists
 import java.nio.file.Files.isDirectory
