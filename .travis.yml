@@ -10,8 +10,7 @@ script:
 jobs:
   include:
     - stage: release
-      script:
-        - ./gradlew assemble
+      script: skip
       before_deploy:
         - nvm install lts/*
         - yarn install
