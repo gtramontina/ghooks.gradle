@@ -8,7 +8,7 @@
     "@semantic-release/release-notes-generator": "7.3.0",
     "commitizen": "4.0.3",
     "cz-conventional-changelog": "3.0.2",
-    "gradle-semantic-release-plugin": "1.1.0",
+    "gradle-semantic-release-plugin": "1.2.1",
     "semantic-release": "15.13.24"
   },
   "scripts": {
