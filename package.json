@@ -2,7 +2,7 @@
   "repository": "https://github.com/gtramontina/ghooks.gradle.git",
   "devDependencies": {
     "@semantic-release/changelog": "3.0.5",
-    "@semantic-release/commit-analyzer": "6.3.0",
+    "@semantic-release/commit-analyzer": "6.3.1",
     "@semantic-release/git": "7.0.16",
     "@semantic-release/github": "5.5.5",
     "@semantic-release/release-notes-generator": "7.3.2",
