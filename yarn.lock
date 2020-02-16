@@ -2062,12 +2062,12 @@ graceful-fs@^4.2.0:
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.2.1.tgz#1c1f0c364882c868f5bff6512146328336a11b1d"
   integrity sha512-b9usnbDGnD928gJB3LrCmxoibr3VE4U2SMo5PBuBnokWyDADTqDPXg4YpwKF1trpH+UbGp7QLicO3+aWEy0+mw==
 
-gradle-semantic-release-plugin@1.3.1:
-  version "1.3.1"
-  resolved "https://registry.yarnpkg.com/gradle-semantic-release-plugin/-/gradle-semantic-release-plugin-1.3.1.tgz#660da09fbe09ee27fef478e3bcf620070b932002"
-  integrity sha512-y6Wp3MCAAknJbXPrsb8TeZ63FtZsakXdyn0Y+cdWemo4hhsry7xVCGZwQPS09EHiI0gd23O6TqCefQAK4EH7fQ==
+gradle-semantic-release-plugin@1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/gradle-semantic-release-plugin/-/gradle-semantic-release-plugin-1.4.0.tgz#2a3088b56f6f72f15b9b36ae3a1f92ce7b593076"
+  integrity sha512-NUXMe90hX3juZGpUkb5pUQ4gzqhAhOf/mmETno8wUSDKQRWDT4pSou3OFXEyQXok4Kc/bkOJ8YF0oqtIieUAOg==
   dependencies:
-    properties "^1.2.1"
+    promisified-properties "^2.0.2"
     split2 "^3.1.1"
 
 handlebars@^4.1.0:
@@ -3930,6 +3930,11 @@ parse-passwd@^1.0.0:
   resolved "https://registry.yarnpkg.com/parse-passwd/-/parse-passwd-1.0.0.tgz#6d5b934a456993b23d37f40a382d6f1666a8e5c6"
   integrity sha1-bVuTSkVpk7I9N/QKOC1vFmao5cY=
 
+parsimmon@^1.13.0:
+  version "1.13.0"
+  resolved "https://registry.yarnpkg.com/parsimmon/-/parsimmon-1.13.0.tgz#6e4ef3dbd45ed6ea6808be600ac4b9c8a44228cf"
+  integrity sha512-5UIrOCW+gjbILkjKPgTgmq8LKf8TT3Iy7kN2VD7OtQ81facKn8B4gG1X94jWqXYZsxG2KbJhrv/Yq/5H6BQn7A==
+
 pascalcase@^0.1.1:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/pascalcase/-/pascalcase-0.1.1.tgz#b363e55e8006ca6fe21784d2db22bd15d7917f14"
@@ -4033,17 +4038,19 @@ promise-retry@^1.1.1:
     err-code "^1.0.0"
     retry "^0.10.0"
 
+promisified-properties@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/promisified-properties/-/promisified-properties-2.0.2.tgz#aa8a572adef4dd051a954a42154e1a943e225981"
+  integrity sha512-py8yn4zqt5khR+1qmykvy0ecsCTqHQxdJRbKvBqwe736APCvocpDbN4WP0rQA472fehlkHQSHXAvAfEhdlBNBQ==
+  dependencies:
+    parsimmon "^1.13.0"
+
 promzard@^0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/promzard/-/promzard-0.3.0.tgz#26a5d6ee8c7dee4cb12208305acfb93ba382a9ee"
   integrity sha1-JqXW7ox97kyxIggwWs+5O6OCqe4=
   dependencies:
     read "1"
-
-properties@^1.2.1:
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/properties/-/properties-1.2.1.tgz#0ee97a7fc020b1a2a55b8659eda4aa8d869094bd"
-  integrity sha1-Dul6f8AgsaKlW4ZZ7aSqjYaQlL0=
 
 proto-list@~1.2.1:
   version "1.2.4"
