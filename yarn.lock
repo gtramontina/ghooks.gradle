@@ -2152,12 +2152,12 @@ graceful-fs@^4.2.2, graceful-fs@^4.2.3:
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.2.3.tgz#4a12ff1b60376ef09862c2093edd908328be8423"
   integrity sha512-a30VEBm4PEdx1dRB7MFK7BejejvCvBronbLjht+sHuGYj8PHs7M/5Z+rt5lw551vZ7yfTCj4Vuyy3mSJytDWRQ==
 
-gradle-semantic-release-plugin@1.4.0:
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/gradle-semantic-release-plugin/-/gradle-semantic-release-plugin-1.4.0.tgz#2a3088b56f6f72f15b9b36ae3a1f92ce7b593076"
-  integrity sha512-NUXMe90hX3juZGpUkb5pUQ4gzqhAhOf/mmETno8wUSDKQRWDT4pSou3OFXEyQXok4Kc/bkOJ8YF0oqtIieUAOg==
+gradle-semantic-release-plugin@1.4.1:
+  version "1.4.1"
+  resolved "https://registry.yarnpkg.com/gradle-semantic-release-plugin/-/gradle-semantic-release-plugin-1.4.1.tgz#8e48c63f25236e50d5fbd3627a9c9e8b63b12caf"
+  integrity sha512-yb/9sOBilBotsi9uzp65p4sMEdrnNrLqWjwf/ZeGYa19XthNYqMEoW7IST6TiBK9YGlKXiIOFMCHjYNusm5N6g==
   dependencies:
-    promisified-properties "^2.0.2"
+    promisified-properties "^2.0.3"
     split2 "^3.1.1"
 
 handlebars@^4.1.0:
@@ -4336,10 +4336,10 @@ promise-retry@^1.1.1:
     err-code "^1.0.0"
     retry "^0.10.0"
 
-promisified-properties@^2.0.2:
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/promisified-properties/-/promisified-properties-2.0.2.tgz#aa8a572adef4dd051a954a42154e1a943e225981"
-  integrity sha512-py8yn4zqt5khR+1qmykvy0ecsCTqHQxdJRbKvBqwe736APCvocpDbN4WP0rQA472fehlkHQSHXAvAfEhdlBNBQ==
+promisified-properties@^2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/promisified-properties/-/promisified-properties-2.0.3.tgz#bfa5be69305fd720162bd52fe26047ec8685fa1f"
+  integrity sha512-4gOK+0YbtKibVzMGfduu8muo7hQS9oZek0TVNfq8TJj+j9qqMJnwGVcRma3rWO9hloF2vgTGVF3GntWd4LLTIw==
   dependencies:
     parsimmon "^1.13.0"
 
