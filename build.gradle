@@ -24,7 +24,7 @@ dependencies {
     testImplementation(group: "org.awaitility", name: "awaitility", version: "3.1.6")
     testRuntime(group: "org.junit.platform", name: "junit-platform-launcher", version: "1.6.0")
     testRuntime(group: "org.junit.jupiter", name: "junit-jupiter-engine", version: "5.6.1")
-    testRuntime(group: "org.junit.vintage", name: "junit-vintage-engine", version: "5.6.0")
+    testRuntime(group: "org.junit.vintage", name: "junit-vintage-engine", version: "5.6.1")
 }
 
 test { useJUnitPlatform() }
