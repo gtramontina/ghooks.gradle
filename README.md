@@ -31,6 +31,29 @@ mkdir .githooks/
 
 You may now execute any `gradle` command. The plugin will ensure it has everything it needs in order to get your git hooks working.
 
+With additions to your build file, you can even use this plugin if your hooks are in a dependency and shared amongst multiple projects:
+
+```groovy
+task addHooksFromJar {
+    def hookDir = new File(projectDir, ".githooks")
+
+    if(!hookDir.exists()) {
+        hookDir.mkdir()
+    }
+
+    configurations.compile.each { jar ->
+        if (jar.name.contains("hooks")) {
+            copy {
+                from(zipTree(jar))
+                into(hookDir)
+            }
+        }
+    }
+}
+
+installGitHooks.dependsOn("addHooksFromJar")
+```
+
 ## Contributing <img src="https://png.icons8.com/wired/96/000000/laptop.png" align="right" width="24">
 
 Contributions of any kind are very welcome! 🙏
