@@ -20,7 +20,7 @@ dependencies {
     implementation(group: "org.jetbrains.kotlin", name: "kotlin-stdlib-jdk8", version: "1.4.0")
     implementation(group: "commons-io", name: "commons-io", version: "2.7")
     testImplementation(group: "io.kotlintest", name: "kotlintest-runner-junit5", version: "3.4.2")
-    testImplementation(group: "org.junit.jupiter", name: "junit-jupiter-api", version: "5.6.2")
+    testImplementation(group: "org.junit.jupiter", name: "junit-jupiter-api", version: "5.9.0")
     testImplementation(group: "org.awaitility", name: "awaitility", version: "3.1.6")
     testRuntime(group: "org.junit.platform", name: "junit-platform-launcher", version: "1.6.2")
     testRuntime(group: "org.junit.jupiter", name: "junit-jupiter-engine", version: "5.6.2")
