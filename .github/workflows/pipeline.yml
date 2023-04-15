@@ -1,0 +1,41 @@
+name: "🧩 Pipeline"
+
+on:
+  push:
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  build:
+    name: "🛠️ Build"
+    strategy:
+      matrix:
+        os:
+          - ubuntu-latest
+          - windows-latest
+          - macos-latest
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: "☁️ Checkout"
+        uses: actions/checkout@v3
+      - name: "🐘 Validate Gradle"
+        uses: gradle/wrapper-validation-action@v1
+      - name: "🫘 Setup Java"
+        uses: actions/setup-java@v3
+        with:
+          java-version: 11
+          distribution: temurin
+          cache: gradle
+      - name: "👷 Test and Build"
+        run: ./gradlew clean build --no-daemon
+
+  release:
+    name: "🚀 Release"
+    needs: build
+    if: github.ref == 'refs/heads/master'
+    concurrency: release
+    runs-on: ubuntu-latest
+    steps:
+      - name: "📦 Semantic Release"
+        run: exit 0
