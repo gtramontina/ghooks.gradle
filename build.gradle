@@ -47,7 +47,7 @@ gradlePlugin {
 
 // Plugin Publishing Custom Tasks --------------------------------------------------------------------------------------
 
-tasks.create("checkPublishCredentials") {
+tasks.register("checkPublishCredentials") {
     group = "plugin portal"
     description = "Checks if your environment has the publishing credentials properly setup."
 
@@ -61,5 +61,5 @@ tasks.create("checkPublishCredentials") {
     }
 }
 
-tasks.withType(LoginTask) { enabled = false }
-tasks.withType(PublishTask) { dependsOn("checkPublishCredentials") }
+tasks.withType(LoginTask).configureEach { enabled = false }
+tasks.withType(PublishTask).configureEach { dependsOn("checkPublishCredentials") }
