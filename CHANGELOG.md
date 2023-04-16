@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/gtramontina/ghooks.gradle/compare/v1.1.1...v1.2.0) (2023-04-16)
+
+
+### Features
+
+* release dependency updates ([47b36fd](https://github.com/gtramontina/ghooks.gradle/commit/47b36fd60d2d4c833d7914031fe9bec5e634b83c))
+
 ## [1.1.1](https://github.com/gtramontina/ghooks.gradle/compare/v1.1.0...v1.1.1) (2019-08-06)
 
 
