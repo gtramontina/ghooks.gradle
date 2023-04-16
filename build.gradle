@@ -40,7 +40,7 @@ gradlePlugin {
             displayName = "ghooks"
             description = "Simple Git hooks"
             implementationClass = "com.gtramontina.ghooks.GHooks"
-            tags.set(["gradle", "plugin", "git", "hook", "ghook", "ghooks", "versioned"])
+            tags.set(["git", "hook", "ghook", "ghooks", "versioned"])
         }
     }
 }
