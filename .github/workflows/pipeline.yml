@@ -45,7 +45,7 @@ jobs:
           node-version: lts/*
           cache: "yarn"
       - name: "📦 Semantic Release"
-        run: yarn semantic-release
+        run: "yarn && yarn semantic-release"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GRADLE_PUBLISH_KEY: ${{ secrets.GRADLE_PUBLISH_KEY }}
