@@ -15,7 +15,7 @@ plugins {
 group = "com.gtramontina.ghooks.gradle"
 compileKotlin { kotlinOptions.jvmTarget = "1.8" }
 compileTestKotlin { kotlinOptions.jvmTarget = "1.8" }
-repositories { jcenter() }
+repositories { mavenCentral() }
 dependencies {
     implementation(group: "org.jetbrains.kotlin", name: "kotlin-stdlib-jdk8", version: "1.4.0")
     implementation(group: "commons-io", name: "commons-io", version: "2.7")
