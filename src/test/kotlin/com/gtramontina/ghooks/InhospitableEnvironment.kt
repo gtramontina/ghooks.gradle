@@ -7,20 +7,24 @@ import com.gtramontina.ghooks.support.toRegexGI
 import io.kotlintest.matchers.collections.shouldHaveSize
 import io.kotlintest.matchers.string.shouldMatch
 import org.awaitility.Awaitility.await
-import org.awaitility.Duration.ONE_SECOND
+import org.awaitility.Durations.ONE_SECOND
 import org.gradle.api.Project
 import org.gradle.testfixtures.ProjectBuilder
 import org.junit.jupiter.api.AfterEach
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
+import kotlin.io.path.createTempDirectory
 
-class `Inhospitable Environment` {
+class InhospitableEnvironment {
     private lateinit var project: Project
     private lateinit var logger: TestLogger
 
     @BeforeEach
     fun beforeEach() {
-        project = ProjectBuilder.builder().build()
+        project = ProjectBuilder
+            .builder()
+            .withProjectDir(createTempDirectory().toFile().apply { deleteOnExit() })
+            .build()
         logger = TestLogger()
     }
 

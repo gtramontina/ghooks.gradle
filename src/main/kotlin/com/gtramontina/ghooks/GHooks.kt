@@ -1,8 +1,8 @@
 package com.gtramontina.ghooks
 
+import org.apache.commons.io.FileUtils.forceDelete
 import org.gradle.api.Plugin
 import org.gradle.api.Project
-import org.apache.commons.io.FileUtils.forceDelete
 import java.nio.file.Files.createSymbolicLink
 import java.nio.file.Files.exists
 import java.nio.file.Files.isDirectory
@@ -42,8 +42,9 @@ class GHooks : Plugin<Project> {
             val root = project.rootDir
             val target = root.resolve(GIT_HOOKS_TARGET).toPath()
 
-            if (!isDirectory(target))
+            if (!isDirectory(target)) {
                 task.logger.warn(GIT_HOOKS_TARGET_WARNING.trimIndent()).also { return@task }
+            }
 
             GIT_CDUP.exec(root)
                 .thenApply { root.resolve(it.trim()) }

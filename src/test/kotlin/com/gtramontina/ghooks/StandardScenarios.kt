@@ -6,7 +6,7 @@ import io.kotlintest.matchers.collections.containExactlyInAnyOrder
 import io.kotlintest.should
 import io.kotlintest.shouldBe
 import org.awaitility.Awaitility.await
-import org.awaitility.Duration.ONE_SECOND
+import org.awaitility.Durations.ONE_SECOND
 import org.gradle.api.Project
 import org.gradle.testfixtures.ProjectBuilder
 import org.junit.jupiter.api.BeforeEach
@@ -17,7 +17,7 @@ import java.nio.file.Files.readSymbolicLink
 import java.nio.file.Paths
 import java.util.stream.Collectors.toList
 
-class `Standard Scenarios` {
+class StandardScenarios {
     private lateinit var project: Project
     private var customHooks = listOf("pre-commit", "prepare-commit-msg")
 
