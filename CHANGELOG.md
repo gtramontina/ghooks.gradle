@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/gtramontina/ghooks.gradle/compare/v1.2.0...v1.2.1) (2023-04-16)
+
+
+### Bug Fixes
+
+* remove forbidden gradle tags ('gradle', 'plugin') ([c2fdf34](https://github.com/gtramontina/ghooks.gradle/commit/c2fdf3412e35cbfb57140a3bf4ed4e153614cc48))
+
 # [1.2.0](https://github.com/gtramontina/ghooks.gradle/compare/v1.1.1...v1.2.0) (2023-04-16)
 
 
