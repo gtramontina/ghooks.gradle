@@ -7,9 +7,6 @@ import java.nio.file.Files.isDirectory
 class GHooks : Plugin<Project> {
     companion object {
         private const val GIT_HOOKS_TARGET = ".githooks"
-        private const val DESCRIPTION = "Installs the configured Git hooks."
-        private const val GROUP = "git hooks"
-        private const val TASK_NAME = "installGitHooks"
         private const val GIT_CONFIG_HOOKS = "git config core.hooksPath $GIT_HOOKS_TARGET"
         private const val GIT_HOOKS_TARGET_WARNING = """
 
@@ -28,9 +25,9 @@ class GHooks : Plugin<Project> {
     }
 
     override fun apply(project: Project) {
-        project.task(TASK_NAME) { task ->
-            task.description = DESCRIPTION
-            task.group = GROUP
+        project.task("installGitHooks") { task ->
+            task.description = "Installs the configured Git hooks."
+            task.group = "git hooks"
 
             val root = project.rootDir
             val target = root.resolve(GIT_HOOKS_TARGET).toPath()
