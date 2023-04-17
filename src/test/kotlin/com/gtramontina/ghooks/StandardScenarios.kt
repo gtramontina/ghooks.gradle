@@ -38,8 +38,8 @@ class StandardScenarios {
         project.pluginManager.apply(GHooks::class.java)
 
         await().atMost(ONE_SECOND).untilAsserted {
-            "git config user.email 'john@doe.org'".exec(project.rootDir)
-            "git config user.name 'John Doe'".exec(project.rootDir)
+            "git config user.name \"John Doe\"".exec(project.rootDir)
+            "git config user.email \"john@doe.org\"".exec(project.rootDir)
 
             val output = "git commit --allow-empty -m 'test-commit'".exec(project.rootDir).get()
 
