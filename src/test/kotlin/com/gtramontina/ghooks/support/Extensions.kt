@@ -10,7 +10,13 @@ import kotlin.text.RegexOption.MULTILINE
 
 fun String.toRegexGI() = toRegex(setOf(IGNORE_CASE, DOT_MATCHES_ALL, MULTILINE))
 fun Project.initializeGitRepository(): String = "git init".exec(rootDir).get()
-fun Project.createCustomHooks(dirname: String, vararg hooks: String) = rootDir
+fun Project.createCustomHooks(dirname: String, files: Map<String, String> = emptyMap()) = rootDir
     .resolve(dirname).toPath()
     .let { createDirectories(it) }
-    .let { target -> hooks.map { target.resolve(it) }.forEach { createFile(it) } }
+    .let { path ->
+        files.map { Pair(path.resolve(it.key), it.value) }.forEach {
+            createFile(it.first).toFile()
+                .apply { setExecutable(true) }
+                .apply { writeText(it.second) }
+        }
+    }

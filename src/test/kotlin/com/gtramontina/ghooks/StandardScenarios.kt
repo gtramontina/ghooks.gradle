@@ -2,29 +2,29 @@ package com.gtramontina.ghooks
 
 import com.gtramontina.ghooks.support.createCustomHooks
 import com.gtramontina.ghooks.support.initializeGitRepository
-import io.kotlintest.matchers.collections.containExactlyInAnyOrder
-import io.kotlintest.should
-import io.kotlintest.shouldBe
+import io.kotlintest.matchers.string.shouldContain
 import org.awaitility.Awaitility.await
 import org.awaitility.Durations.ONE_SECOND
 import org.gradle.api.Project
 import org.gradle.testfixtures.ProjectBuilder
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
-import java.nio.file.Files.isSymbolicLink
-import java.nio.file.Files.list
-import java.nio.file.Files.readSymbolicLink
-import java.nio.file.Paths
-import java.util.stream.Collectors.toList
+import kotlin.io.path.createTempDirectory
 
 class StandardScenarios {
     private lateinit var project: Project
-    private var customHooks = listOf("pre-commit", "prepare-commit-msg")
+    private var customHooks = mapOf(
+        Pair("pre-commit", """echo "ran pre-commit hook!" """),
+        Pair("prepare-commit-msg", """echo "ran prepare-commit-msg hook!" """)
+    )
 
     @BeforeEach
     fun `setup project as a git repository`() {
-        project = ProjectBuilder.builder().build()
-        project.createCustomHooks(".githooks", *customHooks.toTypedArray())
+        project = ProjectBuilder
+            .builder()
+            .withProjectDir(createTempDirectory().toFile().apply { deleteOnExit() })
+            .build()
+        project.createCustomHooks(".githooks", customHooks)
         project.initializeGitRepository()
     }
 
@@ -38,13 +38,9 @@ class StandardScenarios {
         project.pluginManager.apply(GHooks::class.java)
 
         await().atMost(ONE_SECOND).untilAsserted {
-            val hooksDir = project.rootDir.resolve(".git/hooks").toPath()
-            val ls = list(hooksDir).collect(toList())
-            val installed = ls.map { it.fileName.toString() }
-
-            isSymbolicLink(hooksDir) shouldBe true
-            readSymbolicLink(hooksDir) shouldBe Paths.get("../.githooks")
-            installed should containExactlyInAnyOrder(customHooks)
+            val output = "git commit --allow-empty -m 'test-commit'".exec(project.rootDir).get()
+            output shouldContain "ran pre-commit hook!"
+            output shouldContain "ran prepare-commit-msg hook!"
         }
     }
 }

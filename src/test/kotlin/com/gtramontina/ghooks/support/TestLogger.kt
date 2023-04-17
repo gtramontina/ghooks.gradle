@@ -11,7 +11,7 @@ internal class TestLogger {
     val warnings: List<String> get() = entries.getValue(WARN).toList()
     private val context = getSingleton().loggerFactory as OutputEventListenerBackedLoggerContext
     private val entries = with(mutableMapOf<LogLevel, MutableList<String>>()) {
-        withDefault { getOrPut(it, { mutableListOf() }) }
+        withDefault { getOrPut(it) { mutableListOf() } }
     }
 
     init {
