@@ -38,7 +38,7 @@ class StandardScenarios {
         project.pluginManager.apply(GHooks::class.java)
 
         await().atMost(ONE_SECOND).untilAsserted {
-            val output = "git commit --allow-empty -m 'test-commit'".exec(project.rootDir).get()
+            val output = "git commit --author='John Doe <john@doe.org>' --allow-empty -m 'test-commit'".exec(project.rootDir).get()
             output shouldContain "ran pre-commit hook!"
             output shouldContain "ran prepare-commit-msg hook!"
         }
