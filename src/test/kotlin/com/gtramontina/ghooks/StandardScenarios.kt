@@ -14,8 +14,8 @@ import kotlin.io.path.createTempDirectory
 class StandardScenarios {
     private lateinit var project: Project
     private var customHooks = mapOf(
-        Pair("pre-commit", """echo "ran pre-commit hook!" """),
-        Pair("prepare-commit-msg", """echo "ran prepare-commit-msg hook!" """)
+        "pre-commit" to """echo "ran pre-commit hook!" """,
+        "prepare-commit-msg" to """echo "ran prepare-commit-msg hook!" """
     )
 
     @BeforeEach
