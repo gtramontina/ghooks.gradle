@@ -18,7 +18,7 @@ Add the following entry to your `build.gradle` on the `plugins` section.
 
 ```groovy
 plugins {
-    id "com.gtramontina.ghooks.gradle" version "1.1.0"
+    id "com.gtramontina.ghooks.gradle" version "2.0.0"
 }
 ```
 <p align="right"><sup><code>build.gradle</code></sup></p>
