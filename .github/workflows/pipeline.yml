@@ -29,6 +29,11 @@ jobs:
           cache: gradle
       - name: "👷 Test and Build"
         run: ./gradlew clean build --no-daemon
+        env:
+          GIT_AUTHOR_NAME: "John Doe"
+          GIT_COMMITTER_NAME: "John Doe"
+          GIT_AUTHOR_EMAIL: "john@doe.org"
+          GIT_COMMITTER_EMAIL: "john@doe.org"
 
   release:
     name: "🚀 Release"
