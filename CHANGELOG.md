@@ -1,3 +1,29 @@
+# [2.0.0](https://github.com/gtramontina/ghooks.gradle/compare/v1.2.1...v2.0.0) (2023-04-21)
+
+
+### Bug Fixes
+
+* make String.exec more resilient—handle arguments with spaces and across OS' ([01d632e](https://github.com/gtramontina/ghooks.gradle/commit/01d632e285e1ee29ca06d96c2383525ce21138a9))
+
+
+### Features
+
+* use "git config core.hooksPath" instead of symlinking ([396f0c0](https://github.com/gtramontina/ghooks.gradle/commit/396f0c07adaec34dce2edcd4a320146542acd812))
+
+
+### BREAKING CHANGES
+
+* this note is more to signify that this change can
+have unexpected consequences on repositories that used any previous
+version where GHooks used to use symbolic links. While I can't
+think of anything that can go wrong with simply re-setting what the
+local config for hooksPath is, this note is meant to be a trigger
+for a major version change and to give a potential migration path:
+
+- Remove the symlinked directory (and potentially re-create an
+  empty directory: `rm -rf .git/hooks && mkdir .git/hooks`;
+- Run GHooks' install task: `./gradlew installGitHooks`;
+
 ## [1.2.1](https://github.com/gtramontina/ghooks.gradle/compare/v1.2.0...v1.2.1) (2023-04-16)
 
 
