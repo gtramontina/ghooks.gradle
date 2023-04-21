@@ -6,7 +6,7 @@ import java.nio.file.Files.isDirectory
 
 class GHooks : Plugin<Project> {
     companion object {
-        private const val GIT_HOOKS_TARGET = "./.githooks"
+        private const val GIT_HOOKS_TARGET = ".githooks"
         private const val GIT_CONFIG_HOOKS = "git config core.hooksPath $GIT_HOOKS_TARGET"
         private const val GIT_HOOKS_TARGET_WARNING = """
 
