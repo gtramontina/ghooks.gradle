@@ -9,7 +9,7 @@
     "commitizen": "4.3.0",
     "cz-conventional-changelog": "3.3.0",
     "gradle-semantic-release-plugin": "1.7.6",
-    "semantic-release": "21.0.1"
+    "semantic-release": "21.0.2"
   },
   "scripts": {
     "semantic-release": "semantic-release",
