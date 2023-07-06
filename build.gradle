@@ -17,7 +17,7 @@ compileKotlin { kotlinOptions.jvmTarget = "11" }
 compileTestKotlin { kotlinOptions.jvmTarget = "11" }
 repositories { mavenCentral() }
 dependencies {
-    implementation(group: "org.jetbrains.kotlin", name: "kotlin-stdlib-jdk8", version: "1.8.21")
+    implementation(group: "org.jetbrains.kotlin", name: "kotlin-stdlib-jdk8", version: "1.9.0")
     implementation(group: "commons-io", name: "commons-io", version: "2.11.0")
     testImplementation(group: "io.kotlintest", name: "kotlintest-runner-junit5", version: "3.4.2")
     testImplementation(group: "org.junit.jupiter", name: "junit-jupiter-api", version: "5.9.3")
